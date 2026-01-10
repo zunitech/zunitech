@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ZUNITECH | Contacto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ===============================
+     HEADER / NAVBAR
+=============================== -->
+<header class="header">
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="/imagenes/Z.png" alt="ZUNITECH Logo">
+      <span>ZUNITECH</span>
+    </div>
+
+    <!-- MENU -->
+    <nav class="nav">
+      <a href="index.html#cotizacion">Cotización</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#armado-pc">Armado PC</a>
+      <a href="index.html#notebook">Notebook</a>
+      <a href="index.html#urgencia" class="nav-urgent">🚨 Urgencia</a>
+      <a href="sobre-mi.html" class="active">Sobre mí</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+  </div>
+</header>
+
+<!-- ===============================
+     CONTACTO
+=============================== -->
+<section class="section category category-soft">
+  <div class="info-box">
+
+    <h2>📩 Contáctame</h2>
+
+    <p class="microcopy">
+      Completa el formulario y te responderé personalmente.
+      Si tu caso es urgente, te recomiendo escribir directamente por WhatsApp.
+    </p>
+
+    <form
+      action="https://formspree.io/f/mpqwvgvp"
+      method="POST"
+      class="contact-form"
+    >
+
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Tu nombre"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Tu correo"
+        required
+      >
+
+      <input
+        type="text"
+        name="asunto"
+        placeholder="Asunto (Ej: Cotización, Armado PC, Urgencia)"
+      >
+
+
+      <textarea
+        name="mensaje"
+        rows="5"
+        placeholder="Cuéntame tu problema o consulta"
+        required
+      ></textarea>
+
+      <button type="submit" class="whatsapp-btn">
+        Enviar consulta
+      </button>
+
+    </form>
+
+    <p class="microcopy" style="margin-top:1rem;">
+      🔒 Tus datos se utilizan únicamente para responder tu consulta.
+      No se almacenan ni se comparten con terceros.
+    </p>
+
+
+    <p class="microcopy" style="margin-top:1rem;">
+      ⏱️ Horario de respuesta: dentro del mismo día hábil.
+    </p>
+
+  </div>
+</section>
+
+<!-- ===============================
+     CTA ALTERNATIVO
+=============================== -->
+<section class="section">
+  <div class="info-box">
+    <h2>¿Prefieres atención inmediata?</h2>
+
+    <p class="microcopy">
+      Escríbeme directamente por WhatsApp y coordinamos de inmediato.
+    </p>
+
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/56966811038?text=Hola,%20necesito%20ayuda%20con%20mi%20equipo"
+      target="_blank"
+    >
+      📲 Contactar por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ===============================
+     FOOTER
+=============================== -->
+<footer class="footer">
+  <div class="footer-content">
+
+    <div class="footer-brand">
+      <h3>ZUNITECH</h3>
+      <p>Soporte y mantención computacional</p>
+    </div>
+
+    <div class="footer-contact">
+      <p><strong>📲 WhatsApp:</strong></p>
+      <a href="https://wa.me/56966811038" target="_blank">
+        +56 9 6681 1038
+      </a>
+
+      <p style="margin-top:1rem;"><strong>✉️ Correo:</strong></p>
+      <a href="mailto:zunitech.soporte@gmail.com">
+        zunitech.soporte@gmail.com
+      </a>
+    </div>
+
+    <div class="footer-info">
+      <p><strong>📍 Modalidad</strong></p>
+      <p>Taller · Domicilio · Remoto</p>
+      <p><strong>🕘 Horario</strong></p>
+      <p>Lunes a Viernes 14:30–20:00 · Sábado 9:00–12:30</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 ZUNITECH · Todos los derechos reservados
+  </div>
+</footer>
+
+<!-- ===============================
+     BOTÓN WHATSAPP FLOTANTE
+=============================== -->
+<a
+  href="https://wa.me/56966811038?text=Hola,%20quiero%20cotizar%20un%20servicio"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Contactar por WhatsApp"
+>
+  💬
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>
