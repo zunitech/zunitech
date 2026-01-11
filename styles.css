@@ -603,3 +603,20 @@ ul {
   object-fit: contain;
 }
 
+.footer-author {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.footer-author a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.footer-author a:hover {
+  opacity: 1;
+}
+
+
