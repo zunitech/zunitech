@@ -618,3 +618,21 @@ ul {
 .footer-author a:hover {
   opacity: 1;
 }
+
+/* FOOTER SOCIAL */
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 0.2rem;
+}
+
+.footer-social img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
