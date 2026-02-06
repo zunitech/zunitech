@@ -99,6 +99,77 @@ h1, h2 {
 }
 
 /* ===============================
+   DROPDOWN SERVICIOS (NUEVO)
+=============================== */
+
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* botón "Servicios ▾" */
+.dropdown-btn {
+  position: relative;
+  color: #f5f5f5;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  padding: .4rem .2rem;
+}
+
+/* misma línea animada que los links */
+.dropdown-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--verde);
+  transition: width .25s ease;
+}
+
+.dropdown-btn:hover::after {
+  width: 100%;
+}
+
+/* menú desplegable */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #111;
+  border-radius: 12px;
+  min-width: 190px;
+  display: none;
+  flex-direction: column;
+  padding: .4rem 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  z-index: 999;
+}
+
+/* links internos */
+.dropdown-menu a {
+  padding: .7rem 1rem;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: .95rem;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255,255,255,.06);
+}
+
+/* mostrar hover desktop */
+.nav-dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+
+/* ===============================
    NAV URGENCIA (PRIORIDAD VISUAL)
 =============================== */
 .nav a.nav-urgent {
@@ -154,9 +225,23 @@ h1, h2 {
   .nav.open {
     display: flex;
   }
+
+  .nav-dropdown {
+    flex-direction: column;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    display: flex;
+    gap: .8rem;
+  }
+
+  .dropdown-menu a {
+    font-size: 1rem;
+  }
 }
-
-
 
 /* ===============================
    GRID
@@ -635,4 +720,5 @@ ul {
   height: 18px;
   filter: brightness(0) invert(1);
 }
+
 
