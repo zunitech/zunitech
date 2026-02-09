@@ -59,6 +59,7 @@ h1, h2 {
   color: #f5f5f5;
   font-weight: 800;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 .logo img {
@@ -824,3 +825,16 @@ ul {
   opacity: .7;
 }
 
+/* ========================================
+   DOWNLOAD
+======================================== */
+
+.anydesk-link {
+  color: var(--verde);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.anydesk-link:hover {
+  text-decoration: underline;
+}
