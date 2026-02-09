@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZUNITECH | Contacto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,7 +14,7 @@
   <div class="header-container">
 
     <div class="logo">
-      <img src="imagenes/Z.png" alt="ZUNITECH Logo">
+      <img src="/imagenes/Z.png" alt="ZUNITECH Logo">
       <span>ZUNITECH</span>
     </div>
 
@@ -23,25 +24,22 @@
       <a href="index.html#armado-pc">Armado PC</a>
       <a href="index.html#notebook">Notebook</a>
       <a href="index.html#urgencia" class="nav-urgent">🚨 Urgencia</a>
-      <a href="sobre-mi.html" class="active">Sobre mí</a>
+      <a href="sobre-mi.html">Sobre mí</a>
       <a href="contacto.html" class="active">Contacto</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Abrir menú">
-      ☰
-    </button>
-
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
   </div>
 </header>
 
-<section class="section category category-soft">
-  <div class="info-box">
+<section class="section category category-soft reveal">
+  <div class="info-box contact-box">
 
     <h2>📩 Contáctame</h2>
 
     <p class="microcopy">
-      Completa el formulario y te responderé personalmente.
-      Si tu caso es urgente, te recomiendo escribir directamente por WhatsApp.
+      Describe tu problema o lo que necesitas cotizar.
+      Te responderé personalmente dentro del mismo día hábil.
     </p>
 
     <form
@@ -67,51 +65,42 @@
       <input
         type="text"
         name="asunto"
-        placeholder="Asunto (Ej: Cotización, Armado PC, Urgencia)"
+        placeholder="Asunto (Cotización, Armado, Urgencia, etc.)"
       >
-
 
       <textarea
         name="mensaje"
         rows="5"
-        placeholder="Cuéntame tu problema o consulta"
+        placeholder="Cuéntame el problema o servicio que necesitas"
         required
       ></textarea>
 
-      <button type="submit" class="whatsapp-btn">
+      <button type="submit" class="btn-primary">
         Enviar consulta
       </button>
 
     </form>
 
-    <p class="microcopy" style="margin-top:1rem;">
-      🔒 Tus datos se utilizan únicamente para responder tu consulta.
-      No se almacenan ni se comparten con terceros.
+    <div class="contact-alt">
+      <p>¿Necesitas atención inmediata?</p>
+
+      <a
+        href="https://wa.me/56966811038?text=Hola,%20necesito%20ayuda%20con%20mi%20equipo"
+        target="_blank"
+        class="whatsapp-btn"
+      >
+        📲 WhatsApp directo
+      </a>
+
+      <a href="mailto:zunitech.soporte@gmail.com" class="contact-mail">
+        zunitech.soporte@gmail.com
+      </a>
+    </div>
+
+    <p class="microcopy privacy-note">
+      🔒 Tus datos solo se usan para responder tu consulta.
     </p>
 
-
-    <p class="microcopy" style="margin-top:1rem;">
-      ⏱️ Horario de respuesta: dentro del mismo día hábil.
-    </p>
-
-  </div>
-</section>
-
-<section class="section">
-  <div class="info-box">
-    <h2>¿Prefieres atención inmediata?</h2>
-
-    <p class="microcopy">
-      Escríbeme directamente por WhatsApp y coordinamos de inmediato.
-    </p>
-
-    <a
-      class="whatsapp-btn"
-      href="https://wa.me/56966811038?text=Hola,%20necesito%20ayuda%20con%20mi%20equipo"
-      target="_blank"
-    >
-      📲 Contactar por WhatsApp
-    </a>
   </div>
 </section>
 
@@ -133,22 +122,12 @@
       <a href="mailto:zunitech.soporte@gmail.com">
         zunitech.soporte@gmail.com
       </a>
-      <!-- Instagram -->
-      <p style="margin-top:1rem;"><strong>📷 Instagram:</strong></p>
-      <a
-        href="https://www.instagram.com/zunitech.cl/"
-        target="_blank"
-        class="footer-social"
-      >
-        <img src="imagenes/instagram.svg" alt="Instagram" />
-        @zunitech.cl
-      </a>
     </div>
 
     <div class="footer-info">
-      <p><strong>📍 Modalidad</strong></p>
+      <p><strong>Modalidad</strong></p>
       <p>Taller · Domicilio · Remoto</p>
-      <p><strong>🕘 Horario</strong></p>
+      <p><strong>Horario</strong></p>
       <p>Lunes a Viernes 14:30–20:00 · Sábado 9:00–12:30</p>
     </div>
 
@@ -156,11 +135,6 @@
 
   <div class="footer-bottom">
     © 2026 ZUNITECH · Todos los derechos reservados
-    <span class="footer-author">
-      Página creada por
-      <a href="https://www.linkedin.com/in/cristianzunigas/" target="_blank" rel="noopener">
-        Cristian Zúñiga
-      </a>
   </div>
 </footer>
 
@@ -168,12 +142,11 @@
   href="https://wa.me/56966811038?text=Hola,%20quiero%20cotizar%20un%20servicio"
   class="whatsapp-float"
   target="_blank"
-  aria-label="Contactar por WhatsApp"
 >
   💬
 </a>
 
+
 <script src="main.js"></script>
 </body>
 </html>
-
