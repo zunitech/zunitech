@@ -62,6 +62,10 @@ h1, h2 {
   text-decoration: none;
 }
 
+.logo:hover {
+  opacity: .85;
+}
+
 .logo img {
   height: 36px;
 }
@@ -838,3 +842,4 @@ ul {
 .anydesk-link:hover {
   text-decoration: underline;
 }
+
