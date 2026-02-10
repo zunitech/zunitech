@@ -698,10 +698,14 @@ ul {
 }
 
 .footer-author {
-  display: block;
-  margin-top: 0.4rem;
-  font-size: 0.85rem;
-  opacity: 0.75;
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #ffffff;
+  text-align:center;
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--verde);
 }
 
 .footer-author a {
@@ -846,5 +850,6 @@ ul {
 .anydesk-link:hover {
   text-decoration: underline;
 }
+
 
 
