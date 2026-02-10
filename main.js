@@ -42,3 +42,14 @@ function setActiveLink() {
 }
 
 window.addEventListener('scroll', setActiveLink);
+
+
+const dropdownBtn = document.querySelector('.dropdown-btn');
+const dropdown = document.querySelector('.nav-dropdown');
+
+if (dropdownBtn && dropdown) {
+  dropdownBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // evita comportamientos raros
+    dropdown.classList.toggle('open');
+  });
+}
