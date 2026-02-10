@@ -239,8 +239,12 @@ h1, h2 {
     position: static;
     box-shadow: none;
     background: transparent;
-    display: flex;
+    display: none;
     gap: .8rem;
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    display: flex;
   }
 
   .dropdown-menu a {
@@ -842,4 +846,5 @@ ul {
 .anydesk-link:hover {
   text-decoration: underline;
 }
+
 
