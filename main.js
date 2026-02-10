@@ -48,8 +48,25 @@ const dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdown = document.querySelector('.nav-dropdown');
 
 if (dropdownBtn && dropdown) {
+
   dropdownBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // evita comportamientos raros
+    e.preventDefault();
+    e.stopPropagation(); 
+
     dropdown.classList.toggle('open');
   });
+
+  
+  dropdown.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      dropdown.classList.remove('open');
+      nav.classList.remove('open');
+    });
+  });
+
+ 
+  document.addEventListener('click', () => {
+    dropdown.classList.remove('open');
+  });
 }
+
