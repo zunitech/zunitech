@@ -59,12 +59,13 @@ h1, h2 {
   color: #f5f5f5;
   font-weight: 800;
   font-size: 1.1rem;
-  text-decoration: none;
+  text-decoration: none; /* ← ESTA es la única línea nueva */
 }
 
 .logo:hover {
   opacity: .85;
 }
+
 
 .logo img {
   height: 36px;
@@ -85,22 +86,6 @@ h1, h2 {
   text-decoration: none;
   font-weight: 500;
   padding: .4rem .2rem;
-}
-
-/* Línea animada inferior */
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--verde);
-  transition: width .25s ease;
-}
-
-.nav a:hover::after {
-  width: 100%;
 }
 
 /* ===============================
@@ -174,6 +159,22 @@ h1, h2 {
 }
 
 
+/* Línea animada inferior */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--verde);
+  transition: width .25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
 /* ===============================
    NAV URGENCIA (PRIORIDAD VISUAL)
 =============================== */
@@ -231,10 +232,12 @@ h1, h2 {
     display: flex;
   }
 
+  /* dropdown móvil */
   .nav-dropdown {
     flex-direction: column;
   }
 
+  /* OCULTO por defecto */
   .dropdown-menu {
     position: static;
     box-shadow: none;
@@ -243,14 +246,18 @@ h1, h2 {
     gap: .8rem;
   }
 
+  /* se abre cuando JS agrega .open */
   .nav-dropdown.open .dropdown-menu {
     display: flex;
   }
+
 
   .dropdown-menu a {
     font-size: 1rem;
   }
 }
+
+
 
 /* ===============================
    GRID
@@ -278,6 +285,25 @@ h1, h2 {
   transition: .3s ease;
   position: relative;
 }
+
+/* === Variante simple (index sin imagen) === */
+.service-card:not(:has(.card-image)) {
+  padding: 1.8rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-card h3 {
+  margin: 0 0 .6rem 0;
+  font-size: 1.15rem;
+}
+
+.service-card p {
+  margin: 0;
+  font-size: .95rem;
+  opacity: .75;
+}
+
 
 .service-card:hover {
   transform: translateY(-6px);
@@ -352,6 +378,39 @@ ul {
   filter: brightness(1.1);
 }
 
+
+/* icono circular */
+.wa-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+
+  margin-right: 8px;
+}
+
+/* texto */
+.wa-text {
+  white-space: nowrap;
+}
+
+/* móvil: más compacto */
+@media (max-width: 600px) {
+  .wa-text {
+    display: none;
+  }
+
+  .whatsapp-float {
+    padding: 10px;
+  }
+}
+
+
 /* ===============================
    INFO BOX
 =============================== */
@@ -417,30 +476,98 @@ ul {
 }
 
 /* ===============================
-   WHATSAPP FLOTANTE
+   WHATSAPP FLOTANTE PRO
 =============================== */
+
 .whatsapp-float {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 56px;
-  height: 56px;
-  background: var(--verde);
-  color: var(--negro);
-  border-radius: 50%;
+  right: 20px;
+  bottom: 20px;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
+
   text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  background: #25d366;
+  color: white;
+
+  border-radius: 40px;
+  padding: 10px 16px 10px 10px;
+
   box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  z-index: 2000;
-  transition: transform .2s ease, filter .2s ease;
+
+  z-index: 9999;
+
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.08);
-  filter: brightness(1.1);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.35);
+}
+
+/* ===============================
+   WHATSAPP PRO — ANIMACIONES + TOOLTIP
+   (extensión del bloque flotante)
+=============================== */
+
+/* entrada suave */
+.whatsapp-float {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: waFadeIn .6s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes waFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* pulse cada cierto tiempo */
+@keyframes waPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.whatsapp-float.pulse {
+  animation: waPulse .6s ease;
+}
+
+/* tooltip */
+.wa-tooltip {
+  position: absolute;
+  right: 105%;
+  background: #111;
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateX(8px);
+  transition: .25s ease;
+
+  pointer-events: none;
+}
+
+.wa-tooltip.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ocultar tooltip en móvil */
+@media (max-width: 600px) {
+  .wa-tooltip {
+    display: none;
+  }
 }
 
 
@@ -837,7 +964,9 @@ ul {
   opacity: .7;
 }
 
-/*  DOWNLOAD */
+/* ========================================
+   DOWNLOAD
+======================================== */
 
 .anydesk-link {
   color: var(--verde);
@@ -849,8 +978,10 @@ ul {
   text-decoration: underline;
 }
 
-/* CTA HERO PRINCIPAL(solo afecta botones .cta-primary) */
-
+/* ===============================
+   CTA HERO PRINCIPAL
+   (solo afecta botones .cta-primary)
+=============================== */
 .cta-primary {
   display: inline-block;
   margin-top: 1.8rem;
@@ -875,7 +1006,9 @@ ul {
   box-shadow: 0 18px 36px rgba(34,197,94,.40);
 }
 
-/* HERO */
+/* ===============================
+        HERO
+=============================== */
 
 .hero-pro {
   padding: 120px 20px 80px;
@@ -968,8 +1101,10 @@ ul {
   }
 }
 
-/* SISTEMA UNIFICADO DE BOTONES
-   NO rompe los antiguos */
+/* ========================================
+   SISTEMA UNIFICADO DE BOTONES
+   NO rompe los antiguos
+======================================== */
 
 .btn {
   display: inline-block;
@@ -1005,7 +1140,9 @@ ul {
   filter: brightness(1.05);
 }
 
-/*   AVISO VACACIONES */
+/* =========================
+   AVISO VACACIONES
+========================= */
 
 .top-notice {
   position: fixed;
@@ -1050,3 +1187,4 @@ ul {
 
   cursor: pointer;
 }
+
